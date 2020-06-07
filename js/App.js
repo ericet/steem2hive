@@ -141,7 +141,7 @@ async function postToHive() {
     hive_keychain.requestPost(hiveid, title, body, category, '', json_metadata, permlink, comment_options, function (response) {
       if (response.success) {
         $('#message').html(`<div class="alert alert-success" role="alert">
-        Post has been published! <a href="https://hive.blog/@${author}/${permlink}">Click here to view the post</a>
+        Post has been published! <a href="https://hive.blog/@${hiveid}/${permlink}">Click here to view the post</a>
       </div>`);
       } else {
         $('#message').html(`<div class="alert alert-danger" role="alert">
