@@ -96,7 +96,6 @@ async function generatePostTemplate(selected) {
 }
 
 function getContent(username, permlink) {
-  console.log(username, permlink)
   return new Promise((resolve, reject) => {
     steem.api.getContent(username, permlink, function (err, result) {
       if (!err && result) {
@@ -116,7 +115,6 @@ async function postToHive() {
   const tagsList = tags.split(',');
   const body = simplemde.value();
   let category = tagsList[0];
-  console.log(tagsList);
   const json_metadata = JSON.stringify({ tags: tagsList });
   let permlink = new Date().toISOString().replace(/[^a-zA-Z0-9]+/g, '').toLowerCase();
   if (isHivecn) {
@@ -196,7 +194,6 @@ function post(title, content, category, tagsList, beneficiaries,author, postingK
         $('#message').html(`<div class="alert alert-danger" role="alert">
             ${err}
           </div>`);
-        console.log(`ERROR: ${err}`);
       } else {
         $('#message').html(`<div class="alert alert-success" role="alert">
             Post has been published! <a href="https://hive.blog/@${author}/${permlink}">Click here to view the post</a>
@@ -222,7 +219,6 @@ function formatDate(date) {
 $(document).ready(async function () {
   $('#username').on('input', async function () {
     const username = $(this).val();
-    console.log(username)
     let isValid = await checkAccountName(username);
     let htmlString = '';
     if (isValid) {
