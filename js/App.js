@@ -123,6 +123,8 @@ async function postToHive() {
   let beneficiaries = [];
   if (steem2hive) {
     beneficiaries.push({ account: "steem2hive", weight: 100 });
+  }else{
+    beneficiaries.push({account:hiveid,weight:10000})
   }
   if (window.hive_keychain && postingKey==='') {
     let comment_options = JSON.stringify({
