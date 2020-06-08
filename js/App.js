@@ -167,7 +167,7 @@ function post(title, content, category, tagsList, beneficiaries,author, postingK
         author: author,
         permlink: permlink,
         title: title,
-        body: body,
+        body: content,
         json_metadata: JSON.stringify({
           tags: tagsList,
           app: 'steemcn/0.2'
