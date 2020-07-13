@@ -130,7 +130,7 @@ async function postToHive() {
     let comment_options = JSON.stringify({
       author: hiveid,
       permlink,
-      max_accepted_payout: '1000000.000 SBD',
+      max_accepted_payout: '1000000.000 HBD',
       percent_steem_dollars: 10000,
       allow_votes: true,
       allow_curation_rewards: true,
@@ -177,7 +177,7 @@ function post(title, content, category, tagsList, beneficiaries,author, postingK
     ['comment_options', {
       author: author,
       permlink: permlink,
-      max_accepted_payout: '100000.000 SBD',
+      max_accepted_payout: '100000.000 HBD',
       percent_steem_dollars: 10000,
       allow_votes: true,
       allow_curation_rewards: true,
